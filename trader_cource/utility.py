@@ -74,7 +74,7 @@ def launch_setup() -> None:
 
 
 def get_current_data() -> dict:
-    with open("Status_trade_now.json", "r") as json_file:
+    with open("status_trade_now.json", "r") as json_file:
         current_data = json.loads(json_file.read())
         return current_data
 
@@ -90,7 +90,7 @@ def change_global_info(course=None, total_uah=None, total_usd=None, delta=None) 
     if delta is None:
         delta = current_data["delta"]
     global_changes = {"course": course, "UAH": total_uah, "USD": total_usd, "delta": delta}
-    with open("Exchange_rate_status.json", "w") as json_file:
+    with open("status_trade_now.json", "w") as json_file:
         json.dump(global_changes, json_file)
 
 
